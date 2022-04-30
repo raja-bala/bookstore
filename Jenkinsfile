@@ -14,5 +14,10 @@ pipeline {
                 sh './gradlew test'
             }
         }
+        stage('Deploy') {
+            steps {
+                heroku git:remote -a book-store-demo-sboot
+            }
+        }
     }
 }
