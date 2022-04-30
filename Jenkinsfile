@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                heroku git:remote -a book-store-demo-sboot
+               git push heroku master
             }
         }
     }
