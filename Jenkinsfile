@@ -16,7 +16,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               git push heroku master
+              dir("${WORKSPACE}"){
+                      sh '''
+                          git push heroku master
+                          '''
+                  }
             }
         }
     }
